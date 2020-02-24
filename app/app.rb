@@ -14,5 +14,6 @@ get '/*' do
     out += '<p>'+ now.strftime("%Y.%d.%m %H:%M:%S") +'</p>' + "\n"
     out += '<p>'+ current_path +'</p>' + "\n"
 
+    headers "Cache-Control" => "public, max-age=60"
     return out
 end
